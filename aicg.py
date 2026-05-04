@@ -2,12 +2,12 @@ import streamlit as st
 from groq import Groq
 import os
 
-# API setup
+
 client = Groq(api_key=st.secrets["GROQ_API_KEY"])
 
 st.title("✍️ AI Content Generator (Groq)")
 
-# Inputs
+
 topic = st.text_input("Enter Topic")
 
 tone = st.selectbox(
@@ -22,7 +22,7 @@ format_type = st.selectbox(
 
 word_limit = st.slider("Word Limit", 50, 500, 150)
 
-# Button
+
 if st.button("Generate Content"):
     if topic:
         prompt = f"""
